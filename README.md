@@ -34,7 +34,7 @@ This project is a grocery list application built with Angular using standalone c
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-repository/grocery-list.git
+   git clone https://github.com/TheXtn/groceries-front.git
    cd grocery-list
    ```
 
