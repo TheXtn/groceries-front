@@ -1,18 +1,23 @@
 <div class="container">
-  
+  <p-toast position="bottom-center" key="bc"></p-toast>
+
   <div class="sidebar">
   <h1>Groceries</h1>
     <button class="new-list">+ New list</button>
     <ul>
-      <li ><a routerLink="/all" routerLinkActive="active">All <span class="item-count">({{productCount}} items)</span></a></li>
-      <li pDroppable (onDrop)="drop('fruits')"><a routerLink="/fruits" routerLinkActive="active">Fruits <span class="item-count">({{productCount}} items)</span></a></li>
-      <li pDroppable (onDrop)="drop('vegetables')"><a routerLink="/vegetables" routerLinkActive="active">Vegetables <span class="item-count">({{productCount}} items)</span></a></li>
-      <li pDroppable (onDrop)="drop('meats')"><a routerLink="/meats" routerLinkActive="active">Meats <span class="item-count">({{productCount}} items)</span></a></li>
+      <li ><a routerLink="/all" routerLinkActive="active">All <span class="item-count">({{productCount['All']}} items)</span></a></li>
+      <li pDroppable (onDrop)="drop('Fruits')"><a routerLink="/fruits" routerLinkActive="active">Fruits <span class="item-count" >({{productCount['Fruits']}} items)</span></a></li>
+      <li pDroppable (onDrop)="drop('Vegetables')"><a routerLink="/vegetables" routerLinkActive="active">Vegetables <span class="item-count">({{productCount['Vegetables']}} items)</span></a></li>
+      <li pDroppable (onDrop)="drop('Meats')"><a routerLink="/meats" routerLinkActive="active">Meats <span class="item-count">({{productCount['Meats']}} items)</span></a></li>
     </ul>
   
   </div>
   <div class="content">
-    <router-outlet></router-outlet>
   
+
+
+
+    <router-outlet></router-outlet>
+
   </div>
 </div>

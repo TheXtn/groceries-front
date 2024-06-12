@@ -11,17 +11,43 @@ export class ProductListComponent implements OnInit {
   @Input() category: "Fruits" | "Vegetables" | "Meats" | "All" = "All";
   products: Product[] = [];
   categoryImage: string = "";
-
-  constructor(private productService: ProductService) {}
-
-  ngOnInit(): void {
-    this.products = this.productService.getProductsByCategory(this.category);
+  searchTerm: string = "";
+  fetchProducts() {
+    this.productService
+      .getProductsByCategory(this.category)
+      ?.subscribe((products) => {
+        this.products = products;
+      });
     this.categoryImage = this.productService.getCategoryImage(this.category);
   }
-  dragStart(product: Product) {
-    // This on starting the product dragging
+  updateProductList() {
+    // Update the product list
+    this.fetchProducts();
   }
+  constructor(private productService: ProductService) {
+    // Subscribe to the updatedProductList EventEmitter
+    this.productService.updatedProductList.subscribe(() => {
+      this.updateProductList();
+    });
+  }
+
+  ngOnInit(): void {
+    this.fetchProducts();
+  }
+  get filteredProducts() {
+    console.log(this.searchTerm)
+    return this.products.filter((product) =>
+      product.name.toLowerCase().includes(this.searchTerm.toLowerCase())
+    );
+  }
+  dragStart(product: Product) {
+    this.productService.draggingProductId = product.id;
+  }
+
   dragEnd(product: Product) {
-    // This on ending the product dragging
+  
+      // this.products = this.products.filter((pr) => pr.id !== product.id);
+    
+    
   }
 }

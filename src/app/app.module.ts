@@ -8,7 +8,12 @@ import { VegetablesComponent } from "./vegetables/vegetables.component";
 import { MeatsComponent } from "./meats/meats.component";
 import { ProductListComponent } from "./product-list/product-list.component";
 import { DragDropModule } from "primeng/dragdrop";
-
+import { HttpClientModule } from "@angular/common/http";
+import { FormsModule } from "@angular/forms";
+import { ToastModule } from "primeng/toast";
+import { ButtonModule } from "primeng/button";
+import { MessageService } from "primeng/api";
+import { DialogModule } from "primeng/dialog";
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,8 +23,17 @@ import { DragDropModule } from "primeng/dragdrop";
     MeatsComponent,
     ProductListComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, DragDropModule],
-  providers: [],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    DragDropModule,
+    HttpClientModule,
+    FormsModule,
+    ToastModule,
+    ButtonModule,
+    DialogModule,
+  ],
+  providers: [MessageService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
