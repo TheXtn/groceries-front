@@ -43,7 +43,9 @@ This project is a grocery list application built with Angular using standalone c
 ### Running the Application
 
 1. Start the dev server
-    ```ng serve```
+    ```ng serve
+    ```
+
 
     
 
