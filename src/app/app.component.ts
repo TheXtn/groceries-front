@@ -15,7 +15,6 @@ export class AppComponent implements OnInit {
     private http: HttpClient,
     private messageService: MessageService
   ) {
-    // Subscribe to the updatedProductList EventEmitter
     this.productService.updatedProductList.subscribe(() => {
       this.startProductsCount();
     });
