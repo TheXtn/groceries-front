@@ -51,6 +51,24 @@ This project is a grocery list application built with Angular using standalone c
     ng serve
     ```
 
+### Running the Application with Docker
+## Building the Docker Image
+
+1. Make sure you have Docker installed on your machine.
+
+2. Build the Docker image by running the following command in the root directory of your project:
+
+   ```sh
+   docker build -t groceries-front .
+## Running the Docker Container
+
+1. After the image is built, you can run a container using the following command:
+
+   ```sh
+   docker run -d -p 8080:8080 groceries-front
+
+
+
 
     
 
