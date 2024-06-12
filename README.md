@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is a grocery list application built with Angular using standalone components. It allows users to drag and drop items from a list into specific categories (Fruits, Vegetables, Meats). The design and functionality are based on the provided design and requirements.
+This project is a grocery list application built with Angular . It allows users to drag and drop items from a list into specific categories (Fruits, Vegetables, Meats). The design and functionality are based on the provided design and requirements.
 
 ## Features
 
