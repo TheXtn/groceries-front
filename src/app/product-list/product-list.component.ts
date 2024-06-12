@@ -12,6 +12,7 @@ export class ProductListComponent implements OnInit {
   products: Product[] = [];
   categoryImage: string = "";
   searchTerm: string = "";
+  //FETCHING THE PRODUCT LIST FROM THE PRODUCTS SERVICE
   fetchProducts() {
     this.productService
       .getProductsByCategory(this.category)

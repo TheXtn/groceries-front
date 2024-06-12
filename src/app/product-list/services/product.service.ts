@@ -18,6 +18,7 @@ export class ProductService {
       "https://images.ctfassets.net/3s5io6mnxfqz/5GlOYuzg0nApcehTPlbJMy/140abddf0f3f93fa16568f4d035cd5e6/AdobeStock_175165460.jpeg", // Path to meat image
     All: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgX0Q62b1M1oXPaWxxbRRAo9tySVlWRtS5DQ&s",
   };
+  //THIS EVENT EMITTER HANDLE PRODUCT UPDATES SO REFETCH AGAIN WITH OTHER COMPONENTS
   updatedProductList: EventEmitter<Product[]> = new EventEmitter<Product[]>();
 
   fetchAllProducts(): Observable<Product[]> {
@@ -33,13 +34,14 @@ export class ProductService {
       }
     );
   }
+  //GETTING THE PRODUCT BASED ON THE CATEGORY
   getProductsByCategory(category: string): Observable<Product[]> | null {
     if (category === "All") {
       return this.fetchAllProducts();
     }
     return this.fetchProductsByCategory(category);
   }
-
+  //THIS METHOD GETS THE RIGHT CAT IMAGE
   getCategoryImage(
     category: "Fruits" | "Vegetables" | "Meats" | "All"
   ): string {
