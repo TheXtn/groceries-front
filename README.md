@@ -40,6 +40,7 @@ This project is a grocery list application built with Angular using standalone c
 
 2. Install dependencies:
    ```npm install
+   npm install
     ```
 
 
@@ -47,6 +48,7 @@ This project is a grocery list application built with Angular using standalone c
 
 1. Start the dev server
     ```ng serve
+    ng serve
     ```
 
 
