@@ -35,16 +35,16 @@ This project is a grocery list application built with Angular using standalone c
 1. Clone the repository:
    ```sh
    git clone https://github.com/your-repository/grocery-list.git
-   cd grocery-list```
+   cd grocery-list
 2. Install dependencies:
    ```npm install
-    ```
+    
 
 ### Running the Application
 
 1. Start the dev server
     ```ng serve
-    ```
+    
 
 ## Application Routes
 
